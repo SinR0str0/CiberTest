@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Demo Ciberseguridad — ¿Qué sabe tu navegador de ti?</title>
+  <title>Introducción a OWASP Juice Shop</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -31,7 +32,7 @@
 
     .badge {
       display: inline-block;
-      background: #ff4444;
+      background: #00b894; /* Ajustado al verde característico de OWASP/Juice Shop */
       color: white;
       font-size: 11px;
       font-weight: 700;
@@ -166,35 +167,36 @@
 <body>
 
 <div class="card">
-  <span class="badge">🔬 Demo Educativa</span>
-  <span class="icon">🛡️</span>
-  <h1>¿Qué sabe tu navegador de ti?</h1>
+  <span class="badge">🍹 OWASP Project</span>
+  <span class="icon">🕵️‍♂️</span>
+  <h1>¿Qué es OWASP Juice Shop?</h1>
   <p class="subtitle">
-    Esta es una demostración para la clase de <strong>Ciberseguridad</strong>.
-    Al presionar el botón, tu navegador compartirá la información técnica que
-    cualquier sitio web puede recopilar sobre tu dispositivo.
+    La aplicación web insegura más moderna y sofisticada del mundo. Diseñada
+    para aprender ciberseguridad de forma práctica, entender el <strong>OWASP Top 10</strong>
+    y desarrollar habilidades reales de pentesting en un entorno seguro y controlado.
   </p>
 
   <div class="info-list">
-    Se recopilará lo siguiente:<br>
-    <span>📱</span> Dispositivo y sistema operativo<br>
-    <span>🌐</span> Navegador y versión<br>
-    <span>🔋</span> Porcentaje de batería<br>
-    <span>📍</span> Ubicación aproximada (por IP)<br>
-    <span>🖥️</span> Resolución de pantalla<br>
-    <span>🕐</span> Zona horaria<br>
-    <span>🌍</span> Idioma del sistema<br>
-    <span>📶</span> Tipo de conexión de red<br>
+    En esta presentación exploraremos:<br>
+    <span>🎯</span> Filosofía: aprender rompiendo<br>
+    <span>🕳️</span> Vulnerabilidades incluidas (XSS, SQLi, Auth, APIs, etc.)<br>
+    <span>📊</span> Sistema de retos, puntuación y <i>scoreboard</i><br>
+    <span>🔧</span> Stack tecnológico (Node.js, Angular, SQLite, Docker)<br>
+    <span>🌐</span> Cómo desplegar tu propia instancia local<br>
+    <span>👥</span> Público objetivo: devs, estudiantes y pentesters<br>
+    <span>📜</span> Marco ético y legal del hacking educativo<br>
+    <span>🚀</span> Primeros pasos en el laboratorio práctico<br>
   </div>
 
   <div class="consent-box">
-    <strong>Consentimiento informado:</strong> Al hacer clic en el botón confirmas
-    que entiendes que esta es una demostración educativa y autorizas el envío
-    de los datos técnicos de tu dispositivo al instructor de la clase.
+    <strong>Aviso ético y legal:</strong> Juice Shop es una herramienta intencionalmente vulnerable.
+    Su uso está destinado exclusivamente a entornos educativos y laboratorios aislados.
+    Nunca expongas instancias inseguras en producción ni realices pruebas fuera de
+    infraestructuras autorizadas.
   </div>
 
-  <button class="btn btn-primary" id="btnShare" onclick="collectAndSend()">
-    ✅ Autorizo — Compartir mi información
+  <button class="btn btn-primary" id="btnStart" onclick="collectAndSend()">
+    🚀 Iniciar presentación
   </button>
 
   <div class="status" id="status"></div>
@@ -202,7 +204,7 @@
 </div>
 
 <div class="footer">
-  Demo de clase · Solo con fines educativos · Los datos se envían al instructor
+  Recurso educativo OWASP · Solo con fines de aprendizaje · Entorno controlado
 </div>
 
 <script>
